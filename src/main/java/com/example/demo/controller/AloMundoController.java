@@ -16,14 +16,14 @@ import com.example.demo.service.KeycloackService;
 public class AloMundoController {
 	
 	@Autowired
-	private KeycloackService keycloackService;
+	private KeycloackService keycloackService;	
 	
-	@GetMapping()
 	@PreAuthorize("hasRole('CONSULTAS')")
+	@GetMapping()	
 	public List<Integer> index(){
 		Integer[] values = { 1, 3, 7 };		
 		return Arrays.asList(values);
-	}
+	}	
 	
 	@GetMapping("/roles")
 	@PreAuthorize("hasRole('INVENTARIO')")
